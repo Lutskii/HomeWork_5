@@ -1,0 +1,25 @@
+// Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+// [3 7 22 2 78] -> 76
+// Создаём функцию по поиску минимума и максимума массива.
+int SumOdd(int[] num)
+{
+    var max = num.Max();
+    var min = num.Min();
+    int total = max - min;
+    return total;
+}
+
+Console.WriteLine("Введите размер массива: ");
+int number = int.Parse(Console.ReadLine()??"");
+Random rnd = new Random();
+int[] arr = new int[number]; // Задаём размер массива который мы задали в переменной number
+
+for(int i = 0; i < number; i++)
+{
+    arr[i] = rnd.Next(0, 100); // прописываем вариацию чисел, которые будут учавствовать в рандоме
+}
+string res = string.Join(", ", arr); // Прописываем вывод через запятую массива arr 
+Console.WriteLine($"Наш массив: {res}");
+int result = SumOdd(arr);
+Console.WriteLine($"Разность большего и меньшего числа равна: {result}");
